@@ -10,8 +10,7 @@ const technology = document.querySelector('#Input2')
 var ul = document.getElementsByTagName('ul')
 const studentsName = []
 const technologyName = []
-var random = ""
-var list = ""
+
 
 form[0].addEventListener('submit', function(event) {
     event.preventDefault()
@@ -30,9 +29,9 @@ form[1].addEventListener('submit',function(event){
     var li = document.querySelectorAll('li')
     var list = document.createElement('li')
     let random = studentsName[Math.floor(Math.random()*studentsName.length)]
-    technologyName.push([technology.value, random])
+    technologyName.push(technology.value)
     ul[1].appendChild(list)
-    list.innerHTML = technologyName[technologyName.length -1]
+    list.innerHTML = technologyName[technologyName.length -1] + ' - ' + random
     li.forEach(function(i){
         random == i.textContent && (i.style.textDecoration = "line-through")
     })
