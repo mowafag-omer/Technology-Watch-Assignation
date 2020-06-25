@@ -2,48 +2,41 @@ const form = document.querySelectorAll('form')
 const studentInput = document.querySelector('#Input1')
 const techInput = document.querySelector('#input2')
 const list = document.querySelectorAll('ul')
-const studentsName = []
-let   sn = []
-const technologie = []
+let studentsName = [], technologie = [], randomName
+ 
 
 form[0].addEventListener('submit', function(event) {
   event.preventDefault()
   studentsName.push(studentInput.value)
-  sn.push(studentInput.value)
-  let output = ''
-
-  studentsName.forEach(function(name){
-    output += "<li>" + name + "</li>"
-  })
-  
-  list[0].innerHTML = output  
+  list[0].innerHTML += "<li>" + studentInput.value + "</li>"  
   this.reset()
-  highlight()
 })
 
 form[1].addEventListener('submit', function(event) {
   event.preventDefault()
-  let rstd
-  if(sn.length != 0){
-    rstd = sn[Math.floor(Math.random() * sn.length)]
-    technologie.push([techInput.value, rstd])
-    sn.splice(sn.indexOf(rstd), 1)
+  if(studentsName.length != 0){
+    randomName = [Math.floor(Math.random() * studentsName.length)]
+    console.log(randomName)
+    
+    // technologie.push([techInput.value, randomName])
+    list[1].innerHTML += "<li>" + techInput.value + ' - ' + studentsName[randomName] + "</li>" 
+    studentsName.splice(studentsName.indexOf(randomName), 1)
+    list[0].querySelectorAll('li').forEach(function(i, k){
+      randomName == k && (i.style.textDecoration = 'line-through')
+    })  
   }
-
-  let output = ''
-  technologie.forEach(function(name){
-    output += "<li>" + name[0] + ' - ' + name[1] + "</li>"
-  })
-
-  list[1].innerHTML = output   
   this.reset()
-  highlight()
+  // let output = ''
+  // technologie.forEach(function(name){
+  //   output += "<li>" + name[0] + ' - ' + name[1] + "</li>"
+  // })
 })
 
-function highlight(){
-  list[0].querySelectorAll('li').forEach(function(i){
-    technologie.forEach(function(ts){
-      ts[1] == i.textContent && (i.style.textDecoration = 'line-through')
-    })
-  })
-}
+// function lineThrough(){
+//   list[0].querySelectorAll('li').forEach(function(i){
+//     technologie.forEach(function(ts){
+//       ts[1] == i.textContent && (i.style.textDecoration = 'line-through')
+//     })
+//   })
+// }
+
