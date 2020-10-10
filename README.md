@@ -1,2 +1,2 @@
 # Technology-Watch-Assignation
-![](https://img.shields.io/badge/Bootstrap_vue-blueviolet?logo=Bootstrap).
+![](https://img.shields.io/badge/javaScript-yellow?logo=javaScript).
