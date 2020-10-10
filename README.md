@@ -15,13 +15,16 @@ The aim of this project is to be able to create a list of students in one hand, 
 ![Test Image 4](https://github.com/mowafag-omer/Technology-Watch-Assignation/blob/master/Capture.PNG)
 <br><br>
 ## JScode
-- token:
+- Show students and Assassinated Technologies lists once the page has loaded
 ```js
-let token = jwt.sign(
-  { email: email, name: name, id: id },
-  config.secret,
-  {
-    expiresIn: 86400,
-  }
-);
+window.onload = () => {
+  students = JSON.parse(localStorage.getItem('student')) 
+  techs = JSON.parse(localStorage.getItem('tech')) 
+  
+  students.forEach((i) => studentsName.push(i))
+  techs.forEach((i) => technologie.push(i) )
+
+  list[0].innerHTML = studentsName.map(i => "<li>" + i + "</li>").join('') 
+  list[1].innerHTML = technologie.map(i => `<li> ${i[0]} - ${i[1]}</li>`).join('') 
+}
 ```
