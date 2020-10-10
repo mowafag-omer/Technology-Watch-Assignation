@@ -15,7 +15,7 @@ The aim of this project is to be able to create a list of students in one hand, 
 ![Test Image 4](https://github.com/mowafag-omer/Technology-Watch-Assignation/blob/master/Capture.PNG)
 <br><br>
 ## JScode
-- Show students and Assassinated Technologies lists once the page has loaded
+ Show students and Assassinated Technologies lists once the page has loaded
 ```js
 window.onload = () => {
   students = JSON.parse(localStorage.getItem('student')) 
