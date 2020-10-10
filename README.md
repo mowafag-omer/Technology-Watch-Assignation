@@ -15,3 +15,13 @@ The aim of this project is to be able to create a list of students in one hand, 
 ![Test Image 4](https://github.com/mowafag-omer/Technology-Watch-Assignation/blob/master/Capture.PNG)
 <br><br>
 ## JScode
+- token:
+```js
+let token = jwt.sign(
+  { email: email, name: name, id: id },
+  config.secret,
+  {
+    expiresIn: 86400,
+  }
+);
+```
